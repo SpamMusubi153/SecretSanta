@@ -59,13 +59,15 @@ function calculateResults() {
         newNameDisplay.id = `gifter-results-${i}`
         resultsList.appendChild(newNameDisplay);
 
-        let selectedRecipientIndex = Math.floor(Math.random() * remainingGifters.length);
-        appendRecipient(document.getElementById(`gifter-results-${i}`), recipients[selectedRecipientIndex]);
-        
-        console.log(`Before|${selectedRecipientIndex}`);
-        remainingGifters.splice(selectedRecipientIndex, 1);
-        console.log(`After|${selectedRecipientIndex}`);
+        if (remainingGifters.length > 0){
 
+            let selectedRecipientIndex = Math.floor(Math.random() * remainingGifters.length);
+            appendRecipient(document.getElementById(`gifter-results-${i}`), remainingGifters[selectedRecipientIndex]);
+            
+            console.log(`Before|${selectedRecipientIndex}`);
+            remainingGifters.splice(selectedRecipientIndex, 1);
+            console.log(`After|${selectedRecipientIndex}`);
+        }
     }
 
     console.log(remainingGifters);
