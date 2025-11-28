@@ -19,7 +19,7 @@ function addGifter() {
 function addRecipient() {
 
     let recipientField = document.getElementById("recipientField");
-    let recipeintList = document.getElementById("recipeintList");
+    let recipientList = document.getElementById("recipientList");
 
     let recipeintName = gifterField.value;
 
@@ -27,7 +27,7 @@ function addRecipient() {
 
     let newNameDisplay = document.createElement("li");
     newNameDisplay.textContent = recipeintName;
-    recipeintList.appendChild(newNameDisplay);
+    recipientList.appendChild(newNameDisplay);
 
 }
 
