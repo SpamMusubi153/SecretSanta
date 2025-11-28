@@ -30,7 +30,7 @@ function addRecipient() {
     let newNameDisplay = document.createElement("li");
     newNameDisplay.textContent = recipientName;
     recipientList.appendChild(newNameDisplay);
-    
+
 }
 
 function calculateResults() {
@@ -41,7 +41,7 @@ function calculateResults() {
     for (let i = 0; i < gifters.length; i++)
     {
         let newNameDisplay = document.createElement("p");
-        newNameDisplay.textContent = `<strong>${gifters[i]}</strong>`;
+        newNameDisplay.textContent = `<b>${gifters[i]}</b>`;
         newNameDisplay.id = `gifter-results-${i}`
         resultsList.appendChild(newNameDisplay);
 
