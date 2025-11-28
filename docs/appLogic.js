@@ -48,7 +48,7 @@ function calculateResults() {
 
     resultsList.innerHTML = "";
 
-    remainingGifters = structuredCone(recipients);
+    remainingGifters = structuredClone(recipients);
 
     for (let i = 0; i < gifters.length; i++)
     {
