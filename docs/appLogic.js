@@ -71,7 +71,7 @@ function calculateResults() {
         let selectedGifterIndex = Math.floor(Math.random() * numberOfGifters);
         let targetElement = document.getElementById(`gifter-results-${selectedGifterIndex}`)
 
-        appendRecipient(targetElement, recipients[i]);
+        appendRecipient(targetElement, remainingGifters[i]);
     }
 
 }
