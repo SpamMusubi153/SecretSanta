@@ -7,6 +7,7 @@ function addGifter() {
     let gifterList = document.getElementById("gifterList");
 
     let gifterName = gifterField.value;
+    gifterField.value = "";
 
     gifters.push(gifterName);
 
@@ -21,12 +22,13 @@ function addRecipient() {
     let recipientField = document.getElementById("recipientField");
     let recipientList = document.getElementById("recipientList");
 
-    let recipeintName = gifterField.value;
+    let recipientName = gifterField.value;
+    gifterField.value = "";
 
-    recipients.push(recipeintName);
+    recipients.push(recipientName);
 
     let newNameDisplay = document.createElement("li");
-    newNameDisplay.textContent = recipeintName;
+    newNameDisplay.textContent = recipientName;
     recipientList.appendChild(newNameDisplay);
 
 }
