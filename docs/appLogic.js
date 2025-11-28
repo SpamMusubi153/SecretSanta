@@ -50,6 +50,8 @@ function calculateResults() {
 
     remainingGifters = structuredClone(recipients);
 
+    console.log(remainingGifters);
+
     for (let i = 0; i < gifters.length; i++)
     {
         let newNameDisplay = document.createElement("h5");
@@ -59,11 +61,14 @@ function calculateResults() {
 
         let selectedRecipientIndex = Math.floor(Math.random() * remainingGifters.length);
         appendRecipient(document.getElementById(`gifter-results-${i}`), recipients[selectedRecipientIndex]);
+        
+        console.log(`Before|${selectedRecipientIndex}`);
         remainingGifters.splice(selectedRecipientIndex, 1);
+        console.log(`After|${selectedRecipientIndex}`);
 
     }
 
-
+    console.log(remainingGifters);
     
 
     for(let i = 0; i < remainingGifters.length; i++)
