@@ -11,9 +11,39 @@
 
     <div id="file_upload_page">
 
-        <h3 id="upload-a-spreadsheet-that-contains-the-names-of-your-4-star-classes">Upload a spreadsheet that contains the names of your 4-Star classes.</h3>
+        <h3 id="title">1. Enter the names of the secret santa participants to begin.</h3>
 
         <br>
+
+        <div id="input_form">
+            <label for="gifter">Enter the name of a gifter:</label>
+            <br>
+            <input type="text" id="gifterField" name="gifterField"></input>
+            <button type="button" id="gifterButton">Add Gifter</button>
+
+            <br><br>
+
+            <label for="recipient">Enter the name of a recipient:</label>
+            <br>
+            <input type="text" id="recipientField" name="recipientField"></input>
+            <button type="button" id="recipientButton">Add Recipient</button>
+        </div>
+
+        <div id="current_state">
+            <h3>Gifters</h3>
+            <ul id="gifterList"></ul>
+
+            <br>
+
+            <h3>Recipients</h3>
+            <ul id="recipientList"></ul>
+        </div>
+
+        <button type="button" id="calculateResults">Calculate Secret Santa Results</button>
+
+        <div id="results">
+
+        </div>
 
         <div id="file_error_dialog" style="display:none;">
             <h3 id="file_error_message">Unfortunately, this file won't work!</h3>
@@ -30,44 +60,6 @@
         <input type="file" id="spreadsheet_upload" name="spreadsheet">
 
         <br><br>
-
-        <details>
-
-            <summary><span>🔽</span><strong>Need some help?</strong></summary>
-        
-            <br>
-        
-            <h4 id="make-sure-that">Make sure that:</h4>
-        
-            <ul>
-                <li>Each row contains a date and a class name, followed by the names of 4-Star classes</li>
-                <li>The date is in the format MM/DD/YYYY HH:MM:SS, which is the format provided automatically by Google Forms</li>
-                <li>Your spreadsheet is in the CSV (Comma Separated Values) Format</li>
-                <li>No data value contains the comma (,) character</li>
-            </ul>
-        
-            <h4 id="heres-an-example-of-what-your-spreadsheet-could-look-like">Here’s an example of what your spreadsheet could look like:</h4>
-        
-            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4-StarClasses.csv
-                9/1/2023 10:01:10,Library,Wong
-                9/7/2023 14:51:12,Art,Wong,Tree
-                9/1/2023 9:19:43,Library,Wong,Light,Book
-                ...
-            </code></pre></div></div>
-
-            <h4>Reset App</h4>
-            <p>Is something not working? Try resetting the app.</p>
-
-            <button class="lessRoundedButton" id="resetApp" onclick="localStorage.clear();document.location.reload();">
-                <span class="material-symbols-outlined">
-                    restart_alt
-                </span>
-
-                <p style="float: right; margin: auto;">Reset the App</p>
-
-            </button>
-        
-        </details>
 
     </div>
 
