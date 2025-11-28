@@ -40,8 +40,8 @@ function calculateResults() {
 
     for (let i = 0; i < gifters.length; i++)
     {
-        let newNameDisplay = document.createElement("p");
-        newNameDisplay.textContent = `<b>${gifters[i]}</b>`;
+        let newNameDisplay = document.createElement("h5");
+        newNameDisplay.textContent = gifters[i];
         newNameDisplay.id = `gifter-results-${i}`
         resultsList.appendChild(newNameDisplay);
 
