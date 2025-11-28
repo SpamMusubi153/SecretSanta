@@ -59,7 +59,7 @@ function calculateResults() {
 
         let selectedRecipientIndex = Math.floor(Math.random() * remainingGifters.length);
         appendRecipient(document.getElementById(`gifter-results-${i}`), recipients[selectedRecipientIndex]);
-        remainingGifters.splice(selectedGifterIndex, 1);
+        remainingGifters.splice(selectedRecipientIndex, 1);
 
     }
 
