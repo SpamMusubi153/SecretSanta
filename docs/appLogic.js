@@ -30,7 +30,7 @@ function addRecipient() {
     let newNameDisplay = document.createElement("li");
     newNameDisplay.textContent = recipientName;
     recipientList.appendChild(newNameDisplay);
-
+    
 }
 
 function calculateResults() {
