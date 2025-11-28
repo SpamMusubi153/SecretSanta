@@ -48,9 +48,9 @@ function calculateResults() {
 
     resultsList.innerHTML = "";
 
-    remainingGifters = structuredClone(recipients);
+    remainingRecipients = structuredClone(recipients);
 
-    console.log(remainingGifters);
+    console.log(remainingRecipients);
 
     for (let i = 0; i < gifters.length; i++)
     {
@@ -59,26 +59,26 @@ function calculateResults() {
         newNameDisplay.id = `gifter-results-${i}`
         resultsList.appendChild(newNameDisplay);
 
-        if (remainingGifters.length > 0){
+        if (remainingRecipients.length > 0){
 
-            let selectedRecipientIndex = Math.floor(Math.random() * remainingGifters.length);
-            appendRecipient(document.getElementById(`gifter-results-${i}`), remainingGifters[selectedRecipientIndex]);
+            let selectedRecipientIndex = Math.floor(Math.random() * remainingRecipients.length);
+            appendRecipient(document.getElementById(`gifter-results-${i}`), remainingRecipients[selectedRecipientIndex]);
             
             console.log(`Before|${selectedRecipientIndex}`);
-            remainingGifters.splice(selectedRecipientIndex, 1);
+            remainingRecipients.splice(selectedRecipientIndex, 1);
             console.log(`After|${selectedRecipientIndex}`);
         }
     }
 
-    console.log(remainingGifters);
+    console.log(remainingRecipients);
     
 
-    for(let i = 0; i < remainingGifters.length; i++)
+    for(let i = 0; i < remainingRecipients.length; i++)
     {
-        let selectedGifterIndex = Math.floor(Math.random() * remainingGifters.length);
+        let selectedGifterIndex = Math.floor(Math.random() * numberOfGifters.length);
         let targetElement = document.getElementById(`gifter-results-${selectedGifterIndex}`)
 
-        appendRecipient(targetElement, remainingGifters[i]);
+        appendRecipient(targetElement, remainingRecipients[i]);
     }
 
 }
