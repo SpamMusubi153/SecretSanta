@@ -23,7 +23,7 @@ function addRecipient() {
     let targetList = document.getElementById("recipientList");
 
     let recipientName = recipientField.value;
-    gifterField.value = "";
+    recipientField.value = "";
 
     recipients.push(recipientName);
 
