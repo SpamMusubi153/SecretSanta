@@ -33,10 +33,22 @@ function addRecipient() {
 
 }
 
+function appendRecipient(targetElement, name) {
+
+    let newNameDisplay = document.createElement("li");
+    newNameDisplay.textContent = name;
+    targetElement.appendChild(newNameDisplay);
+    
+}
+
 function calculateResults() {
 
     let numberOfGifters = gifters.length;
     let resultsList = document.getElementById("results");
+
+    resultsList.innerHTML = "";
+
+    remainingGifters = structuredCone(recipients);
 
     for (let i = 0; i < gifters.length; i++)
     {
@@ -45,16 +57,21 @@ function calculateResults() {
         newNameDisplay.id = `gifter-results-${i}`
         resultsList.appendChild(newNameDisplay);
 
+        let selectedRecipientIndex = Math.floor(Math.random() * remainingGifters.length);
+        appendRecipient(document.getElementById(`gifter-results-${i}`), recipients[selectedRecipientIndex]);
+        remainingGifters.splice(selectedGifterIndex, 1);
+
     }
 
-    for(let i = 0; i < recipients.length; i++)
+
+    
+
+    for(let i = 0; i < remainingGifters.length; i++)
     {
         let selectedGifterIndex = Math.floor(Math.random() * numberOfGifters);
         let targetElement = document.getElementById(`gifter-results-${selectedGifterIndex}`)
 
-        let newNameDisplay = document.createElement("li");
-        newNameDisplay.textContent = recipients[i];
-        targetElement.appendChild(newNameDisplay);
+        appendRecipient(targetElement, recipients[i]);
     }
 
 }
